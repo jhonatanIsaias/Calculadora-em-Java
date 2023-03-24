@@ -9,16 +9,17 @@ public class App {
         NumberValidation numberValidation = new NumberValidation();
         Scanner ler = new Scanner(System.in);
 
-        int opcao = 0;
+        int opcao = 9;
         String number1 ;
         String number2 ;
 
-        System.out.println(menu.toString());
-        opcao = ler.nextInt();
-
-    while (opcao != 0) {
+        while (opcao != 0) {
         try {
-        switch (opcao) {
+
+            System.out.println(menu.toString());
+            opcao = ler.nextInt();
+
+            switch (opcao) {
 
                 case 1:
                     System.out.println("Digite o primeiro numero:");
@@ -53,7 +54,6 @@ public class App {
                     System.out.println("Digite o segundo numero:");
                     number2 = ler.next();
                     numberValidation.validarNumero(number1,number2);
-                    numberValidation.validarDivisão(number2);
                     Divisao divisao = new Divisao(Double.parseDouble(number1), Double.parseDouble(number2));
                     System.out.println("o resultado é " + divisao.calcular());
                     break;
@@ -61,20 +61,23 @@ public class App {
                     System.out.println("digite o numero que deseja calcular a raiz:");
                     number1 = ler.next();
                     numberValidation.validarNumero(number1);
-                    numberValidation.validarNegativo(number1);
                     RaizQuadrada raizQuadrada = new RaizQuadrada(Double.parseDouble(number1));
                     System.out.println("o resultado é " + raizQuadrada.calcular());
                     break;
                 default:
-                    System.out.println("digte uma opção valida");
+                    if(opcao == 0){
+                        System.out.println("você saiu da calculadora");
+                    }else {
+                        System.out.println("digte uma opção valida");
+                    }
             }
             }catch (RuntimeException e){
                     System.out.println(e.getMessage());
         }
-        System.out.println(menu.toString());
-        opcao = ler.nextInt();
+
+
         }
-        System.out.println("você saiu da calculadora");
+
     }
 
 }
