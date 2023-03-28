@@ -4,7 +4,7 @@ public class Menu {
 
 
     public String toString() {
-        return "ESCOLHA QUAL OPREAÇÃO DESEJA EXECULTAR \n" +
+        return "DIGITE UMA LISTA DE VALORES, O NUMERO DO MEIO REPRESENTA A OPERAÇÃO DESEJADA \n" +
                 "--------------------------------------- \n" +
                 "Opção 1 = soma \n" +
                 "Opção 2 = subração \n" +
